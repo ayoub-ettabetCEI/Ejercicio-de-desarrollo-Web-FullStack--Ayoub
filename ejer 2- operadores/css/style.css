@@ -1,0 +1,18 @@
+.warning{
+    color: rgb(239, 240, 234);
+    background-color: rgb(193, 216, 111);
+
+}
+.sucess{
+    background-color: rgb(93, 224, 93);
+    color: rgb(0, 63, 37);
+    border-color: seagreen;
+
+}
+
+.error{
+    background-color:red;
+    color: rgb(0, 63, 37);
+    border-color: seagreen;
+
+}
