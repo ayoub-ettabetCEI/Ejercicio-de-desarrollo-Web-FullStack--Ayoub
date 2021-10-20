@@ -1,42 +1,108 @@
-// IF - ELSE
-const edad = 15;
-// operadores comparacion > < >= <= === !==
-// if compuesto
-if (edad >= 18) {
-    console.log("eres mayor de edad");
-}
-else {
-    console.log("aun NO eres mayor de edad");
+//  Funciones
+var msGlobal = "mensaje global";
+
+
+function pintarNombre(nombre, apellido){
+    console.log("Hola " + nombre + " "+ apellido);
+
 }
 
-//if anidados --> un IF dentro un ELSE
-// personas (menos 15)  --> NIÑOS
-// personas (entre 15 y 20) --> adolescentes
-// personas (entre 20 y 60) --> adultos
-// personas (mas de 60) --> mayores
-// Operadores Lógicos( || -  &&)
-const age = 90;
-if (age < 15) {
-    console.log("niño");
+pintarNombre("ayoub","et tabet");
+
+//  Calculo del IVA
+
+function calcularIva(precio) {
+    const iva = precio * 0.21;
+    const total = precio + iva;
+    console.log("precio "+ precio + " iva " +iva+ " total "+ total  );
 }
-else if (age >= 15 && age <= 20) {
-    console.log("adolescente");
+
+calcularIva(1500);
+
+
+function suma(num1,num2) {
+    // Ver todo el proceso del codigo
+    const resultado = num1 + num2;
+    console.log(resultado); 
+    return resultado;  
+    //el return corta
+   
 }
-else if (age > 20 && age <= 60) {
-    console.log("adulto");
-}
-else {
-    console.log("mayores");
-}
+// bloque de codigo
+var suma = suma(15,20);
+
+// scope --> entorno
 
 // truthy
 const nameUser = "dayana";
 // falsy
 const apellido = parseInt(nameUser);
 
-if (nameUser) {
-    console.log(nameUser)
+if ( suma <= 1000 ){ 
+    console.log("hola");
 }
-if (!apellido) {
-    console.log(apellido);
+
+//  ------------------Funciones Arrow o Felchas 
+
+const multiplicacion = (num1, num2) =>{
+    const resultado = num1 * num2;
+    console.log("la multiplicación es "+ resultado);
 }
+multiplicacion(10,2);
+
+
+// Funciones Anonimas
+
+const resta = function (num1, num2){
+    const resultado = num1 - num2;
+    console.log("resta "+ resultado);
+}
+
+resta(50,30);
+
+
+
+// Ejercicio Formulario 
+
+//  2 imputs con values de numeros 
+// 1 parrafo para pintar el resultado desde js
+// crear una funcion donde le indique la operación a realizar
+// y luego pintar ese resultado en el parrafo
+
+
+const numero1 = document.querySelector("#num1");
+const numero2 = document.querySelector("#num2");
+const texto = document.querySelector(".texto");
+
+console.log(numero1.value);
+
+function calculo(num1,num2, operacion){
+    let result;
+    if (operacion === "+") {
+        result = num1 + num2;
+
+        // texto.innerHTML = result;
+
+    }else if (operacion === "-"){
+        result = num1 - num2;
+        // texto.innerHTML = result;
+    }else if (operacion === "*"){
+        result = num1 - num2;
+    }else if (operacion === "/"){
+        if (num2 != "0"){
+            result = num1 / num2;
+        }else{
+            result = "el segundo numero es 0";
+        }
+    }
+    texto.innerHTML = result;
+
+
+}
+
+// console.log(numero1.value);
+
+calculo( parseInt(numero1.value) , parseInt(numero2.value), "/");
+
+
+
